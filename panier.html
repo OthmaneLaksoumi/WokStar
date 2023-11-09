@@ -161,7 +161,7 @@
             { id: 'Ramen-id7', title: 'Teriyaki Chicken Ramen', img: 'assets/Othmane/images/Menu/Ramen/img7.png', description: 'Description of the item', price: '$18.00' },
             { id: 'Ramen-id8', title: 'Pork Belly Ramen', img: 'assets/Othmane/images/Menu/Ramen/img8.png', description: 'Description of the item', price: '$24.00' },
             { id: 'Ramen-id9', title: 'Classic Miso Ramen', img: 'assets/Othmane/images/Menu/Ramen/img9.png', description: 'Description of the item', price: '$29.00' },
-            { id: 'Ramen-id10', title: 'Vegetarian Tofu Ramen', img: 'assets/Othmane/images/Menu/Ramen/img10.png', description: 'Description of the item.', price: '$05.00' }],
+            { id: 'Ramen-id10', title: 'Vegewtarian Tofu Ramen', img: 'assets/Othmane/images/Menu/Ramen/img10.png', description: 'Description of the item.', price: '$05.00' }],
 
             [{ id: 'Salad-id1', title: 'Green salad', img: 'assets/Othmane/images/Menu/Salad/img1.png', description: 'Description of the item', price: '$33.00' },
             { id: 'Salad-id2', title: 'Fig salad', img: 'assets/Othmane/images/Menu/Salad/img2.png', description: 'Description of the item', price: '$23.00' },
@@ -198,16 +198,16 @@
             return false;
         }
 
-
-
         let categorieList = ["Ramen", "Salad", "Dessert"];
 
         let idList = [];
-        for (let i = 0; i < productList[1].length; i++) {
-            idList.push('Ramen-id' + (i + 1));
-            idList.push('Salad-id' + (i + 1));
-            idList.push('Dessert-id' + (i + 1));
+
+        for (let i = 0; i < productList.length; i++) {
+            productList[i].forEach(function (list) {
+                idList.push(list.id);
+            });
         }
+
 
         let lengthOfPanierList = 0;
 
@@ -217,7 +217,7 @@
             }
 
         }
-        console.log(lengthOfPanierList);
+        // console.log(lengthOfPanierList);
 
 
 
@@ -274,130 +274,48 @@
             </div>
             <hr class="container line">
             `;
-            const headding = document.createElement("h1");
-            headding.textContent = "Head";
-            console.log(article);
+
             document.body.appendChild(article);
         }
 
-
         productList.forEach(function (ele, i) {
-
             ele.forEach(function (pro, j) {
                 if (searchLocalStorage(pro.id)) {
                     afficheProduct(i, j);
-
                 }
-
             });
         });
 
-
-        // productList.forEach(function (ele, i) {
-        //     if (i > 0) {
-        //         ele.forEach(function (pro, j) {
-
-        //             if (searchLocalStorage(pro.id)) {
-        //                 let article = document.createElement("div");
-        //                 article.id = j + (i - 1) * 10 + 1;
-        //                 article.innerHTML = `
-        //                 <div class="card mb-3 container shadow">
-        //                 <div class="row g-0">
-        //                 <div class="col-md-2 img-center">
-        //                     <img src="${pro.img}" class="img-fluid rounded-start" alt="...">
-        //                 </div>
-        //                 <div class="col-md-4">
-        //                     <div class="card-body">
-        //                         <h5 class="card-title">${pro.title}</h5>
-        //                     <p class="card-text">${pro.description}</p>
-        //                 </div>
-        //             </div>
-
-        //             <div class="col-md-2 d-flex d-flex align-items-center fw-bold">
-        //                 <div class="card-body">
-        //                     <p class="card-text price">${pro.price}</p>
-        //                 </div>
-        //             </div>
-        //             <div class="col-md-2 fw-bold d-flex align-items-center margin-quantity">
-        //                 <div class="card-body">
-        //                     <div class="d-flex">
-        //                         <div class="minus d-flex justify-content-center" onclick="minusProduct(${article.id})">
-        //                             <img src="assets/images/Minus.svg" alt="">
-        //                         </div>
-
-        //                         <div class="number">${localStorage.getItem(`${pro.categorie}${j + 1}Quantity`)}</div>
-
-
-        //                         <div class="plus d-flex justify-content-center" onclick="plusProduct(${article.id})">
-        //                             <img src="assets/images/plus.svg" alt="">
-        //                         </div>
-        //                     </div>
-        //                 </div>
-        //             </div>
-
-        //             <div class="col-md-2 d-flex d-flex align-items-center fw-bold">
-        //                 <div class="card-body">
-        //                     <p class="card-text double-price">$${Number(localStorage.getItem(`${pro.categorie}${j + 1}DoublePrice`).match(/\d+/)[0]).toFixed(2)}</p>
-        //                 </div>
-        //             </div>
-
-
-        //         </div>
-
-        //     </div>
-
-        //     <hr class="container line">
-
-
-        //             `;
-        //                 // console.log(article);
-        // document.body.appendChild(article);
-        //             }
-        //         });
-        //     }
-
-        // });
-
         function minusProduct(x) {
-            // console.log(x);
+
             let productEdit = document.getElementById(x);
-            
-            console.log(typeof parseInt(productEdit.querySelector(".price").innerHTML.match(/\d+/)[0]));
-
             let catg = categorieList[Math.floor((x - 1) / 10)];
-
-            
 
             if (Number(localStorage[`${catg}${x % 10}Quantity`]) > 0) {
                 localStorage[`${catg}${x % 10}Quantity`] = Number(localStorage.getItem(`${catg}${x % 10}Quantity`)) - 1;
-                localStorage[`${catg}${x % 10}DoublePrice`] = Number(localStorage.getItem(`${catg}${x % 10}DoublePrice`)) - Number((productEdit.querySelector(".price").innerHTML).match(/\d+/)[0]);
+                localStorage[`${catg}${x % 10}DoublePrice`] = "$" + (Number(localStorage.getItem(`Ramen${x % 10}DoublePrice`).match(/\d+/)[0]) - Number((productEdit.querySelector(".price").innerHTML).match(/\d+/)[0])).toFixed(2);
             }
 
-
-            let productAjouter = document.getElementById(x);
-
-            productAjouter.querySelector(".number").innerHTML = localStorage[`${catg}${x % 10}Quantity`];
-            // productAjouter.querySelector(".double-price").innerHTML =  localStorage.getItem(`${catg}${x % 10}DoublePrice`);
+            productEdit.querySelector(".number").innerHTML = localStorage[`${catg}${x % 10}Quantity`];
+            productEdit.querySelector(".double-price").innerHTML = localStorage.getItem(`${catg}${x % 10}DoublePrice`);
+            if (Number(localStorage[`${catg}${x % 10}Quantity`]) === 0) {
+                localStorage.removeItem(`${catg}-id${x % 10}`);
+                localStorage[`${catg}${x % 10}Quantity`] = 1;
+                localStorage[`${catg}${x % 10}DoublePrice`] = productEdit.querySelector(".price").innerHTML;
+                window.location.reload();
+            }
 
         }
 
         function plusProduct(x) {
 
-            console.log(x);
-            
             let productEdit = document.getElementById(x);
             let catg = categorieList[Math.floor((x - 1) / 10)];
             localStorage[`${catg}${x % 10}Quantity`] = Number(localStorage.getItem(`${catg}${x % 10}Quantity`)) + 1;
+            localStorage[`${catg}${x % 10}DoublePrice`] = "$" + (Number(localStorage.getItem(`Ramen${x % 10}DoublePrice`).match(/\d+/)[0]) + Number((productEdit.querySelector(".price").innerHTML).match(/\d+/)[0])).toFixed(2);
 
-            let productAjouter = document.getElementById(x);
-
-            productAjouter.querySelector(".number").innerHTML = Number(productAjouter.querySelector(".number").innerHTML) + 1;
-            productAjouter.querySelector(".double-price").innerHTML = "$" + `${(Number(productAjouter.querySelector(".double-price").innerHTML.match(/\d+/)[0]) + Number(productAjouter.querySelector(".price").innerHTML.match(/\d+/)[0])).toFixed(2)}`;
-
-            console.log(productAjouter);
-
-
-
+            productEdit.querySelector(".number").innerHTML = Number(productEdit.querySelector(".number").innerHTML) + 1;
+            productEdit.querySelector(".double-price").innerHTML = localStorage.getItem(`${catg}${x % 10}DoublePrice`);
         }
 
 
@@ -457,20 +375,35 @@
 
 
 
-
         /* Debut: Fonction qui return le total des prix dans le panier page */
 
-        // function calcTotale() {
-        //     let result = 0;
-        //     productList.forEach(function (product, i) {
-        //         if (searchLocalStorage(product.id)) {
-        //             result += Number(localStorage[`article${i + 1}DoublePrice`].match(/\d+/)[0]);
-        //             // console.log( typeof localStorage[`article${i + 1}DoublePrice`]);
-        //         }
-        //     })
+        function calcTotale() {
+            let result = 0;
+            productList.forEach(function (type) {
+                type.forEach(function (product, i) {
+                    if (searchLocalStorage(product.id)) {
+                        categorieList.forEach(function (catg) {
+                            if(product.id.includes(catg)) { 
+                                result += Number(localStorage[`${catg}${i + 1}DoublePrice`].match(/\d+/)[0]);
+                              }
+                        });
+                        
+                    }
+                });
+            });
 
-        //     return result;
-        // }
+
+            // productList.forEach(function (product, i) {
+            //     if (searchLocalStorage(product.id)) {
+            //         result += Number(localStorage[`article${i + 1}DoublePrice`].match(/\d+/)[0]);
+            //         // console.log( typeof localStorage[`article${i + 1}DoublePrice`]);
+            //     }
+            // })
+
+            return result;
+        }
+        // calcTotale()
+
 
         /* Fin: Fonction qui return le le total des prix dans le panier page */
 
@@ -487,11 +420,11 @@
 
         totalOfPanier.innerHTML = `
             <div class="col-3 fw-bold" id="local">Total</div>
-            <div class="col-2 ms-5 fw-bold">Modifier Here!!!</div>
+            <div class="col-2 ms-5 fw-bold">$${calcTotale().toFixed(2)}</div>
        `;
 
         divBtn.innerHTML = `
-            <button class="btn text-light rounded-3 px-4">Devis</button>
+            <button class="btn text-light rounded-3 px-4"><a href="devis.Html" style="color: white">Devis</a></button>
             <button class="btn text-light rounded-3 px-4" onclick="viderLePanier()">Order</button>
        `;
 
