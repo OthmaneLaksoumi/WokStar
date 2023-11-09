@@ -1,9 +1,5 @@
   
-  body{
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden;
-  }
+  
 
   
   .pr{
@@ -24,6 +20,15 @@
 .FST{
     font-size: 15px;
 }
+.hamber{
+    display: none;
+}
+.minimenu{
+    display: none;
+}
+.minimenu .active{
+    display: block;
+}
 @media print {
    .no-print {
     display: none;
@@ -31,11 +36,25 @@
    
 
 }
+.bnt{
+    display: none;
+    border-radius: 10px;
+    width: 50px;
+    height: 35px;
+    position:relative;
+    top: -10%;
+      left: 80%;
+}
 @media  screen and ( max-width: 768px) {
     .fns{
         font-size: 3vw;
     }
-    
+    .bnt{
+        display: block;
+    }
+    .grndmenu{
+        display: none;
+    }
    
     .pr{
         display: block;
@@ -43,10 +62,39 @@
         width: 250px;
         margin-left: 50px;
     }
+    
+
 
     .FFF div p{
         font-size: 9px;
 
+    }
+    .ham{
+        display: none;
+    }
+    .circle {
+        width: 90%;
+        height: 60%;
+
+    }
+    .circle img{
+        width: 90%;
+        height: 95%;
+    }
+    .circle div{
+       width: 100%;
+       height: 60%;
+       margin: 4px;
+
+    }
+    .circle div h4{
+        font-size: 8px;
+        margin-top: 10px;
+    }
+    .hamber{
+        position: fixed;
+        top: 3%;
+        right: 3%;
     }
     .FFF div h6{
         font-size:10px;
