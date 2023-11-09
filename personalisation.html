@@ -2,79 +2,503 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="assets/Othmane/style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/Othmane/style.css">
+    <title>Panier</title>
 </head>
 
 <body>
-  <nav class="container navbar navbar-expand-lg bg-body-tertiary mb-5">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html"><img src="assets/Othmane/images/Logo.svg" alt=""></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="justify-content-center collapse navbar-collapse" id="navbarSupportedContent">
 
-        <ul class="nav">
-          <li class="nav-item mx-2">
-            <a class="nav-link text-dark" aria-current="page" href="index.html">Home</a>
-          </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link text-dark " href="menu.html">Menu</a>
-          </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link text-dark" href="personalisation.html">Create</a>
-          </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link text-dark" href="about.html">About</a>
-          </li>
-        </ul>
-
-        <ul class="nav position-absolute end-0">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="panier.html"><img src="assets/Othmane/images/PanierIcon.svg"
-                alt=""></a>
-          </li>
-          <li class="nav-item">
-            <button class="btn btn-secondary rounded-5">
-              <img class="me-3" src="assets/Othmane/images/PhoneIcon.svg" alt="">
-              <a class="text-light" href="contact.html">Contact</a>
+    <nav class="container navbar navbar-expand-lg bg-body-tertiary mb-5">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="assets/Othmane/images/Logo.svg" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-          </li>
-        </ul>
+            <div class="justify-content-center collapse navbar-collapse" id="navbarSupportedContent">
 
-      </div>
+                <ul class="nav">
+                    <li class="nav-item mx-2">
+                        <a class="nav-link text-dark" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link text-dark " href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link text-dark" href="personalisation.html">Create</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link text-dark" href="about.html">About</a>
+                    </li>
+                </ul>
+
+                <ul class="nav position-absolute end-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="panier.html"><img
+                                src="assets/Othmane/images/PanierIcon.svg" alt=""></a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-secondary rounded-5">
+                            <img class="me-3" src="assets/Othmane/images/PhoneIcon.svg" alt="">
+                            <a class="text-light" href="contact.html">Contact</a>
+                        </button>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="burger-hide">
+        <li class="nav-item ms-5 bg-burger">
+            <a class="nav-link" aria-current="page" href="">Home</a>
+        </li>
+        <li class="nav-item ms-5 bg-burger">
+            <a class="nav-link " href="menu.html">Menu</a>
+        </li>
+
+        <li class="nav-item ms-5 bg-burger">
+            <a class="nav-link" href="personnalisation.html">Create</a>
+        </li>
+
+        <li class="nav-item ms-5 bg-burger">
+            <a class="nav-link" href="">About</a>
+        </li>
+
+    </ul>
+
+    <h1 class="text-center" id="number-of-products"></h1>
+
+    <div class="container d-flex fw-semibold">
+        <div class="col-6" id="local">Article</div>
+        <div class="col-2 ms-3">Prix</div>
+        <div class="col-2">Quantité</div>
+        <div class="col-2">Totale</div>
     </div>
-  </nav>
+    <hr class="container first-line">
 
 
-  <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="burger-hide">
-    <li class="nav-item ms-5 bg-burger">
-      <a class="nav-link" aria-current="page" href="">Home</a>
-    </li>
-    <li class="nav-item ms-5 bg-burger">
-      <a class="nav-link " href="menu.html">Menu</a>
-    </li>
 
-    <li class="nav-item ms-5 bg-burger">
-      <a class="nav-link" href="personnalisation.html">Create</a>
-    </li>
 
-    <li class="nav-item ms-5 bg-burger">
-      <a class="nav-link" href="">About</a>
-    </li>
 
-  </ul>
+
+
+    <footer class="no-print">
+        <div class="card mt-5 mb-4"></div>
+        <div class=" container tol MMM">
+            <div class="row  FFF ">
+                <div class=" col-lg-3  col-sm-4 col-6"><img class="w-50 " src="assets/Khakid/images/Gro_20.png" alt="">
+                    </h5>
+                    <P class="w-50">Savor the artistry where every dish is a culinary masterpiece</P>
+
+                </div>
+                <div class="col-lg-3 col-sm-4 col-6">
+                    <h6>Useful links</h6>
+                    <p>About us</p>
+                    <p>Events</p>
+                    <p>Blogs</p>
+                    <p>FAQ</p>
+                </div>
+                <div class="  col-lg-3 col-sm-4 col-6">
+                    <h6>Main Menu</h6>
+                    <p>Home</p>
+                    <p>Menu</p>
+                    <p>Blogs</p>
+                    <p>Create</p>
+
+                </div>
+                <div class=" col-lg-3  col-sm-4 col-6">
+                    <h6>Contact Us</h6>
+                    <p>wokstar@email.coms</p>
+                    <p>+64 958 248 966</p>
+                    <p>Social media</p>
+
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-lg-5   ">
+                    <div class="row PNG m-4 ">
+                        <div class="col-lg-3  col-6 "><img width="30px" src="assets/Khakid/images/IMG.png" alt="">
+                        </div>
+                        <div class="col-lg-3 col-6 "><img src="assets/Khakid/images/🦆 icon _instagram_.png" alt="">
+                        </div>
+                        <div class="col-lg-3 col-6 "><img src="assets/Khakid/images/🦆 icon _twitter_.png" alt=""></div>
+                        <div class="col-lg-3 col-6 "><img src="assets/Khakid/images/🦆 icon _youtube_.png" alt=""></div>
+                    </div>
+                </div>
+                <div class="col-lg-5 mt-4  col-12 ">
+                    <p class="col-8">Copyright &copy; 2023 Dscode | All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        let productList = [
+            [{ id: 'Ramen-id1', title: 'Classic Miso Ramen', img: 'assets/Othmane/images/Menu/Ramen/img1.png', description: 'Description of the item', price: '$33.00' },
+            { id: 'Ramen-id2', title: 'Vegetarian Tofu Ramen', img: 'assets/Othmane/images/Menu/Ramen/img2.png', description: 'Description of the item', price: '$23.00' },
+            { id: 'Ramen-id3', title: 'Pork Belly Ramen', img: 'assets/Othmane/images/Menu/Ramen/img3.png', description: 'Description of the item', price: '$43.00' },
+            { id: 'Ramen-id4', title: 'Teriyaki Chicken Ramen', img: 'assets/Othmane/images/Menu/Ramen/img4.png', description: 'Description of the item', price: '$45.00' },
+            { id: 'Ramen-id5', title: 'Spicy Sriracha Ramen', img: 'assets/Othmane/images/Menu/Ramen/img5.png', description: 'Description of the item', price: '$13.00' },
+            { id: 'Ramen-id6', title: 'Mushroom Ramen', img: 'assets/Othmane/images/Menu/Ramen/img6.png', description: 'Description of the item', price: '$10.00' },
+            { id: 'Ramen-id7', title: 'Teriyaki Chicken Ramen', img: 'assets/Othmane/images/Menu/Ramen/img7.png', description: 'Description of the item', price: '$18.00' },
+            { id: 'Ramen-id8', title: 'Pork Belly Ramen', img: 'assets/Othmane/images/Menu/Ramen/img8.png', description: 'Description of the item', price: '$24.00' },
+            { id: 'Ramen-id9', title: 'Classic Miso Ramen', img: 'assets/Othmane/images/Menu/Ramen/img9.png', description: 'Description of the item', price: '$29.00' },
+            { id: 'Ramen-id10', title: 'Vegewtarian Tofu Ramen', img: 'assets/Othmane/images/Menu/Ramen/img10.png', description: 'Description of the item.', price: '$05.00' }],
+
+            [{ id: 'Salad-id1', title: 'Green salad', img: 'assets/Othmane/images/Menu/Salad/img1.png', description: 'Description of the item', price: '$33.00' },
+            { id: 'Salad-id2', title: 'Fig salad', img: 'assets/Othmane/images/Menu/Salad/img2.png', description: 'Description of the item', price: '$23.00' },
+            { id: 'Salad-id3', title: 'Salmon salad', img: 'assets/Othmane/images/Menu/Salad/img3.png', description: 'Description of the item', price: '$43.00' },
+            { id: 'Salad-id4', title: 'Fattoush salad', img: 'assets/Othmane/images/Menu/Salad/img4.png', description: 'Description of the item', price: '$45.00' },
+            { id: 'Salad-id5', title: 'Vegetable salad', img: 'assets/Othmane/images/Menu/Salad/img5.png', description: 'Description of the item', price: '$13.00' },
+            { id: 'Salad-id6', title: 'Egg vegi salad', img: 'assets/Othmane/images/Menu/Salad/img6.png', description: 'Description of the item', price: '$10.00' },
+            { id: 'Salad-id7', title: 'Salad 7', img: 'assets/Othmane/images/Menu/Salad/img7.png', description: 'Description of the item', price: '$18.00' },
+            { id: 'Salad-id8', title: 'Salad 8', img: 'assets/Othmane/images/Menu/Salad/img8.png', description: 'Description of the item', price: '$24.00' },
+            { id: 'Salad-id9', title: 'Salad 9', img: 'assets/Othmane/images/Menu/Salad/img9.png', description: 'Description of the item', price: '$29.00' },
+            { id: 'Salad-id10', title: 'Salad 10', img: 'assets/Othmane/images/Menu/Salad/img10.png', description: 'Description of the item.', price: '$05.00' }],
+
+            [{ id: 'Dessert-id1', title: 'Lemon Cake', img: 'assets/Othmane/images/Menu/Dessert/img1.png', description: 'Description of the item', price: '$33.00' },
+            { id: 'Dessert-id2', title: 'Strawberry Waffles', img: 'assets/Othmane/images/Menu/Dessert/img2.png', description: 'Description of the item', price: '$23.00' },
+            { id: 'Dessert-id3', title: 'Fluffy Blueberry Pancake', img: 'assets/Othmane/images/Menu/Dessert/img3.png', description: 'Description of the item', price: '$43.00' },
+            { id: 'Dessert-id4', title: 'Belgian Bliss Waffles', img: 'assets/Othmane/images/Menu/Dessert/img4.png', description: 'Description of the item', price: '$45.00' },
+            { id: 'Dessert-id5', title: 'Red Velvet Delight', img: 'assets/Othmane/images/Menu/Dessert/img5.png', description: 'Description of the item', price: '$13.00' },
+            { id: 'Dessert-id6', title: 'Chocolate Fudge Cake', img: 'assets/Othmane/images/Menu/Dessert/img6.png', description: 'Description of the item', price: '$10.00' },
+            { id: 'Dessert-id7', title: 'Dessert 7', img: 'assets/Othmane/images/Menu/Dessert/img7.png', description: 'Description of the item', price: '$18.00' },
+            { id: 'Dessert-id8', title: 'Dessert 8', img: 'assets/Othmane/images/Menu/Dessert/img8.png', description: 'Description of the item', price: '$24.00' },
+            { id: 'Dessert-id9', title: 'Dessert 9', img: 'assets/Othmane/images/Menu/Dessert/img9.png', description: 'Description of the item', price: '$29.00' },
+            { id: 'Dessert-id10', title: 'Dessert 10', img: 'assets/Othmane/images/Menu/Dessert/img10.png', description: 'Description of the item.', price: '$05.00' }]
+
+
+        ];
+
+        function searchLocalStorage(idSearch) {
+            for (let i = 0; i < localStorage.length; i++) {
+                let key = localStorage.key(i);
+                if (idSearch === localStorage.getItem(key)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        let categorieList = ["Ramen", "Salad", "Dessert"];
+
+        let idList = [];
+
+        for (let i = 0; i < productList.length; i++) {
+            productList[i].forEach(function (list) {
+                idList.push(list.id);
+            });
+        }
+
+
+        let lengthOfPanierList = 0;
+
+        for (let i = 0; i < localStorage.length; i++) {
+            if (idList.includes(localStorage.key(i))) {
+                lengthOfPanierList++;
+            }
+
+        }
+        // console.log(lengthOfPanierList);
+
+
+
+
+
+
+        function afficheProduct(i, j) {
+            let article = document.createElement("div");
+            article.id = j + (i) * 10 + 1;
+            article.innerHTML = `
+            <div class="card mb-3 container shadow">
+                            <div class="row g-0">
+                                <div class="col-md-2 img-center">
+                                    <img src="${productList[i][j].img}" class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${productList[i][j].title}</h5>
+                                    <p class="card-text">${productList[i][j].description}</p>
+                                </div>
+                            </div>
+
+                        <div class="col-md-2 d-flex d-flex align-items-center fw-bold">
+                            <div class="card-body">
+                                <p class="card-text price">${productList[i][j].price}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2 fw-bold d-flex align-items-center margin-quantity">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div class="minus d-flex justify-content-center" onclick="minusProduct(${article.id})">
+                                        <img src="assets/Othmane/images/Minus.svg" alt="">
+                                    </div>
+
+                                    <div class="number">${localStorage.getItem(`${categorieList[i]}${j + 1}Quantity`)}</div>
+
+
+                                    <div class="plus d-flex justify-content-center" onclick="plusProduct(${article.id})">
+                                        <img src="assets/Othmane/images/plus.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 d-flex d-flex align-items-center fw-bold">
+                            <div class="card-body">
+                                <p class="card-text double-price">${localStorage.getItem(`${categorieList[i]}${j + 1}DoublePrice`)}</p>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+            </div>
+            <hr class="container line">
+            `;
+
+            document.body.appendChild(article);
+        }
+
+        productList.forEach(function (ele, i) {
+            ele.forEach(function (pro, j) {
+                if (searchLocalStorage(pro.id)) {
+                    afficheProduct(i, j);
+                }
+            });
+        });
+
+        function minusProduct(x) {
+
+            let productEdit = document.getElementById(x);
+            let catg = categorieList[Math.floor((x - 1) / 10)];
+
+            if (Number(localStorage[`${catg}${x % 10}Quantity`]) > 0) {
+                localStorage[`${catg}${x % 10}Quantity`] = Number(localStorage.getItem(`${catg}${x % 10}Quantity`)) - 1;
+                localStorage[`${catg}${x % 10}DoublePrice`] = "$" + (Number(localStorage.getItem(`Ramen${x % 10}DoublePrice`).match(/\d+/)[0]) - Number((productEdit.querySelector(".price").innerHTML).match(/\d+/)[0])).toFixed(2);
+            }
+
+            productEdit.querySelector(".number").innerHTML = localStorage[`${catg}${x % 10}Quantity`];
+            productEdit.querySelector(".double-price").innerHTML = localStorage.getItem(`${catg}${x % 10}DoublePrice`);
+            if (Number(localStorage[`${catg}${x % 10}Quantity`]) === 0) {
+                localStorage.removeItem(`${catg}-id${x % 10}`);
+                localStorage[`${catg}${x % 10}Quantity`] = 1;
+                localStorage[`${catg}${x % 10}DoublePrice`] = productEdit.querySelector(".price").innerHTML;
+                window.location.reload();
+            }
+
+        }
+
+        function plusProduct(x) {
+
+            let productEdit = document.getElementById(x);
+            let catg = categorieList[Math.floor((x - 1) / 10)];
+            localStorage[`${catg}${x % 10}Quantity`] = Number(localStorage.getItem(`${catg}${x % 10}Quantity`)) + 1;
+            localStorage[`${catg}${x % 10}DoublePrice`] = "$" + (Number(localStorage.getItem(`Ramen${x % 10}DoublePrice`).match(/\d+/)[0]) + Number((productEdit.querySelector(".price").innerHTML).match(/\d+/)[0])).toFixed(2);
+
+            productEdit.querySelector(".number").innerHTML = Number(productEdit.querySelector(".number").innerHTML) + 1;
+            productEdit.querySelector(".double-price").innerHTML = localStorage.getItem(`${catg}${x % 10}DoublePrice`);
+        }
+
+
+
+
+
+
+
+
+
+        /* Debut: Button Pour vider le panier */
+
+        // let emptyPanier = document.createElement("button");
+        // emptyPanier.className = "btn";
+        // emptyPanier.addEventListener('click', function () {
+        //     localStorage.clear();
+        //     location.reload();
+        // });
+        // emptyPanier.innerHTML = "Vider le Panier";
+        // document.body.appendChild(emptyPanier);
+
+        /* Fin: Button Pour vider le panier */
+
+        /* Debut: Afficher le nombre des articles dans le panier */
+
+        if (lengthOfPanierList === 0) {
+            document.getElementById("number-of-products").innerHTML = `Votre Panier est vide`;
+
+        } else {
+            document.getElementById("number-of-products").innerHTML = `Votre Panier ( ${lengthOfPanierList} articles)`;
+        }
+
+        /* Fin: Afficher le nombre des articles dans le panier */
+
+        // console.log(localStorage.getItem('Ramen2Quantity'));
+
+
+
+        // function minusProduct(x) {
+        //     // if (Number(localStorage.getItem(x)) > 0) {
+        //     //     localStorage[`article${x + 1}Quantity`] = Number(localStorage.getItem(`article${x + 1}Quantity`)) - 1;
+        //     //     localStorage[`article${x + 1}DoublePrice`] = Number(localStorage.getItem(`article${x + 1}DoublePrice`).match(/\d+/)[0]) - Number(productList[x].price.match(/\d+/)[0]);
+
+        //     //     let productAjouter = document.getElementById(`${x + 1}`);
+        //     //     productAjouter.querySelector(".number").innerHTML = Number(productAjouter.querySelector(".number").innerHTML) - 1;
+        //     //     productAjouter.querySelector(".double-price").innerHTML = "$" + `${(Number(productAjouter.querySelector(".double-price").innerHTML.match(/\d+/)[0]) - Number(productList[x].price.match(/\d+/)[0])).toFixed(2)}`;
+        //     // }
+        //     // if (Number(localStorage.getItem(`article${x + 1}Quantity`)) === 0) {
+        //     //     localStorage.removeItem(`id${x + 1}`);
+        //     //     window.location.reload();
+        //     console.log(7888);
+        //     // }
+
+
+        // }
+
+
+
+
+        /* Debut: Fonction qui return le total des prix dans le panier page */
+
+        function calcTotale() {
+            let result = 0;
+            productList.forEach(function (type) {
+                type.forEach(function (product, i) {
+                    if (searchLocalStorage(product.id)) {
+                        categorieList.forEach(function (catg) {
+                            if(product.id.includes(catg)) { 
+                                result += Number(localStorage[`${catg}${i + 1}DoublePrice`].match(/\d+/)[0]);
+                              }
+                        });
+                        
+                    }
+                });
+            });
+
+
+            // productList.forEach(function (product, i) {
+            //     if (searchLocalStorage(product.id)) {
+            //         result += Number(localStorage[`article${i + 1}DoublePrice`].match(/\d+/)[0]);
+            //         // console.log( typeof localStorage[`article${i + 1}DoublePrice`]);
+            //     }
+            // })
+
+            return result;
+        }
+        // calcTotale()
+
+
+        /* Fin: Fonction qui return le le total des prix dans le panier page */
+
+
+
+
+        let totalOfPanier = document.createElement('div');
+        let line = document.createElement('hr');
+        let divBtn = document.createElement('div');
+
+        totalOfPanier.className = "container d-flex fw-semibold justify-content-end";
+        line.className = "container first-line";
+        divBtn.className = "container"
+
+        totalOfPanier.innerHTML = `
+            <div class="col-3 fw-bold" id="local">Total</div>
+            <div class="col-2 ms-5 fw-bold">$${calcTotale().toFixed(2)}</div>
+       `;
+
+        divBtn.innerHTML = `
+            <button class="btn text-light rounded-3 px-4"><a href="devis.html" style="color: white">Devis</a></button>
+            <button class="btn text-light rounded-3 px-4" onclick="viderLePanier()">Order</button>
+       `;
+
+        divBtn.style.cssText = `
+            width: fit-content;
+            position: absolute;
+            right: 20vw;
+        `;
+
+
+
+
+        document.body.appendChild(totalOfPanier);
+        document.body.appendChild(line);
+
+        document.body.appendChild(divBtn);
+
+        function viderLePanier() {
+
+            productList.forEach(function (ele) {
+                ele.forEach(function (pro) {
+                    if (searchLocalStorage(pro.id)) {
+                        localStorage.removeItem(pro.id);
+                    }
+                })
+            })
+
+            window.location.reload();
+        }
+
+        // console.log(window.screen.width);
+
+
+        if (window.screen.width < 768) {
+            productList.forEach(function (pro, i) {
+                if (searchLocalStorage(pro.id)) {
+                    // console.log(document.getElementById(i + 1).querySelector('h5'));
+                    document.getElementById(i + 1).querySelector('h5').style.textAlign = '';
+                    console.log(document.getElementById(i + 1).querySelector('h5'));
+
+                }
+            })
+        }
+
+
+
+        window.onresize = function () {
+            productList.forEach(function (pro, indice) {
+                if (searchLocalStorage(pro.id)) {
+                    document.getElementById(indice + 1).querySelector('h5').style.textAlign = window.screen.width < 768 ? 'center' : '';
+                    // document.getElementById(indice + 1).querySelector('img-center').style.cssText = window.screen.width < 768 ? `display: none; justify-content: center;` : '';
+
+                    for (let i = 0; i < document.getElementById(indice + 1).getElementsByClassName('card-text').length; i++) {
+                        document.getElementById(indice + 1).getElementsByClassName('card-text')[i].style.textAlign = window.screen.width < 768 ? 'center' : '';
+
+                    }
+
+
+
+
+                }
+            })
+        }
+
+
+        // localStorage.clear();
+
+        document.body.appendChild(document.querySelector("footer"));
+
+
+    </script>
 
 </body>
 
 </html>
+=======
+>>>>>>> d85b568cd647a4505595d18bc3b3497aaafa6feb
