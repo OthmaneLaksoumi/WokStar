@@ -26,9 +26,7 @@
 .minimenu{
     display: none;
 }
-.minimenu .active{
-    display: block;
-}
+
 @media print {
    .no-print {
     display: none;
@@ -41,13 +39,16 @@
     border-radius: 10px;
     width: 50px;
     height: 35px;
-    position:relative;
-    top: -10%;
+    position:absolute;
+    top: 2%;
       left: 80%;
 }
 @media  screen and ( max-width: 768px) {
     .fns{
         font-size: 3vw;
+    }
+    body{
+        overflow-x: hidden;
     }
     .bnt{
         display: block;
@@ -55,6 +56,25 @@
     .grndmenu{
         display: none;
     }
+    .minimenu{
+        display:block;
+        background-color: rgb(187, 235, 187);
+       
+
+       
+    }
+    .minimenu nav a{
+        border-bottom: 1px seashell solid;
+    }
+
+    .minimenu{
+        display: none;
+    }
+    .minimenu.active{
+        display: block;
+        transition-duration: 500ms;
+    }
+    
    
     .pr{
         display: block;

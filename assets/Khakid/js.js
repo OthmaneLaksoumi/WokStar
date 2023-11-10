@@ -16,6 +16,3 @@ printing.addEventListener("click",function(){
 
 
 
-let bnt=document.querySelector("bnt");
-let minimenu=document.querySelector("minimenu");
-
