@@ -432,3 +432,19 @@ footer .left {
 
 
 /* Fin: Footer*/
+
+
+#pagination {
+    display: flex;
+    justify-content: center;
+}
+
+
+#pagination ul li{
+    color: #39DB4A;
+}
+
+#pagination ul li:hover {
+    cursor: pointer;
+    background-color: #eee;
+}

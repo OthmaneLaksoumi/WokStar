@@ -81,6 +81,7 @@
     </select>
 
 
+
     <!-- Footer Section -->
 
     <footer>
@@ -146,7 +147,14 @@
             { id: 'Ramen-id7', catg: 'Ramen', title: 'Teriyaki Chicken Ramen', img: 'assets/Othmane/images/Menu/Ramen/img7.png', description: 'Description of the item', price: '$18.00' },
             { id: 'Ramen-id8', catg: 'Ramen', title: 'Pork Belly Ramen', img: 'assets/Othmane/images/Menu/Ramen/img8.png', description: 'Description of the item', price: '$24.00' },
             { id: 'Ramen-id9', catg: 'Ramen', title: 'Classic Miso Ramen', img: 'assets/Othmane/images/Menu/Ramen/img9.png', description: 'Description of the item', price: '$29.00' },
-            { id: 'Ramen-id10', catg: 'Ramen', title: 'Vegewtarian Tofu Ramen', img: 'assets/Othmane/images/Menu/Ramen/img10.png', description: 'Description of the item.', price: '$05.00' }],
+            { id: 'Ramen-id10', catg: 'Ramen', title: 'Vegewtarian Tofu Ramen', img: 'assets/Othmane/images/Menu/Ramen/img10.png', description: 'Description of the item.', price: '$05.00' },
+            { id: 'Ramen-id2', catg: 'Ramen', title: 'Vegetarian Tofu Ramen', img: 'assets/Othmane/images/Menu/Ramen/img2.png', description: 'Description of the item', price: '$23.00' },
+            { id: 'Ramen-id5', catg: 'Ramen', title: 'Spicy Sriracha Ramen', img: 'assets/Othmane/images/Menu/Ramen/img5.png', description: 'Description of the item', price: '$13.00' },
+            { id: 'Ramen-id9', catg: 'Ramen', title: 'Classic Miso Ramen', img: 'assets/Othmane/images/Menu/Ramen/img9.png', description: 'Description of the item', price: '$29.00' },
+            { id: 'Ramen-id7', catg: 'Ramen', title: 'Teriyaki Chicken Ramen', img: 'assets/Othmane/images/Menu/Ramen/img7.png', description: 'Description of the item', price: '$18.00' },
+            { id: 'Ramen-id6', catg: 'Ramen', title: 'Mushroom Ramen', img: 'assets/Othmane/images/Menu/Ramen/img6.png', description: 'Description of the item', price: '$10.00' },
+            { id: 'Ramen-id10', catg: 'Ramen', title: 'Vegewtarian Tofu Ramen', img: 'assets/Othmane/images/Menu/Ramen/img10.png', description: 'Description of the item.', price: '$05.00' },
+        ],
 
             [{ id: 'Salad-id1', catg: 'Salad', title: 'Green salad', img: 'assets/Othmane/images/Menu/Salad/img1.png', description: 'Description of the item', price: '$33.00' },
             { id: 'Salad-id2', catg: 'Salad', title: 'Fig salad', img: 'assets/Othmane/images/Menu/Salad/img2.png', description: 'Description of the item', price: '$23.00' },
@@ -179,6 +187,16 @@
         let divContainer = document.createElement("div");
         divContainer.className = "menu-card container-fluid";
 
+        let pagination = document.createElement("nav");
+        pagination.setAttribute("aria-label", "Page navigation example");
+        pagination.id = "pagination";
+        pagination.innerHTML = `
+        <ul class="pagination">
+                <li class="page-item page-link">1</li>
+                <li class="page-item page-link">2</li>
+            </ul>
+        `;
+
         productList.forEach(function (list) {
             list.forEach(function (ele, i) {
 
@@ -204,19 +222,9 @@
         });
         document.body.appendChild(divContainer);
 
-        // console.log(document.querySelectorAll(".add-to-cart"));
-
-
-
-        // AddPanier(productList[2]);
-
-
-
-        // console.log(divContainer);
-
 
         filter.addEventListener('change', function () {
-            divContainer.innerHTML = '';
+            // divContainer.innerHTML = '';
             if (this.value === 'All') {
                 productList.forEach(function (list) {
                     list.forEach(function (ele, i) {
@@ -243,6 +251,8 @@
                 });
 
             } else {
+            divContainer.innerHTML = '';
+
                 productList[Number(this.value) - 1].forEach(function (ele, i) {
                     let element = document.createElement("div");
                     element.className = "menu-item";
@@ -265,10 +275,19 @@
             }
         });
 
+        // <nav aria-label="Page navigation example">
+        //     <ul class="pagination">
+        //         <li class="page-item page-link">1</li>
+        //         <li class="page-item page-link">2</li>
+        //         <li class="page-item page-link">3</li>
+        //     </ul>
+        // </nav>
 
         /* Fin: Ajouter les produits dans Menu */
 
-
+        
+        document.body.appendChild(pagination);
+        console.log(pagination);
         function AddPanier(ele) {
             localStorage.setItem(ele, ele);
         }
