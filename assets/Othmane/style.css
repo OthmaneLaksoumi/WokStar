@@ -173,13 +173,10 @@ hr {
 
 .menu-item {
     flex: 1 1 300px;
-    /* Allow flexibility; item will have at least 300px width */
     max-width: 300px;
-    /* Maximum width for an item */
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(57, 219, 73, 0.5);
-    /* color: rgb(57, 219, 73) */
     margin: 20px;
     padding: 20px;
     text-align: center;

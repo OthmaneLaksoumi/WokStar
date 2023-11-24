@@ -13,6 +13,3 @@ let printing =document.getElementById('print');
 printing.addEventListener("click",function(){
      print();
 });
-
-
-

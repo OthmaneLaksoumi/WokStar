@@ -141,62 +141,43 @@
   </footer>
 
 
-  <select>
-    <optgroup label="All">
-      <option>1d,skdks</option>
-      <option>2</option>
-    </optgroup>
-    <optgroup>
-      <option>1</option>
-      <option>2</option>
-    </optgroup>
-  </select>
-
-
-
-
-
-
-
-
-
 
 
 
   <script>
     let productList = [
-      [{ id: 'Ramen-id1', title: 'Classic Miso Ramen', img: 'assets/Othmane/images/Menu/Ramen/img1.png', description: 'Description of the item', price: '$33.00' },
-      { id: 'Ramen-id2', title: 'Vegetarian Tofu Ramen', img: 'assets/Othmane/images/Menu/Ramen/img2.png', description: 'Description of the item', price: '$23.00' },
-      { id: 'Ramen-id3', title: 'Pork Belly Ramen', img: 'assets/Othmane/images/Menu/Ramen/img3.png', description: 'Description of the item', price: '$43.00' },
-      { id: 'Ramen-id4', title: 'Teriyaki Chicken Ramen', img: 'assets/Othmane/images/Menu/Ramen/img4.png', description: 'Description of the item', price: '$45.00' },
-      { id: 'Ramen-id5', title: 'Spicy Sriracha Ramen', img: 'assets/Othmane/images/Menu/Ramen/img5.png', description: 'Description of the item', price: '$13.00' },
-      { id: 'Ramen-id6', title: 'Mushroom Ramen', img: 'assets/Othmane/images/Menu/Ramen/img6.png', description: 'Description of the item', price: '$10.00' },
-      { id: 'Ramen-id7', title: 'Teriyaki Chicken Ramen', img: 'assets/Othmane/images/Menu/Ramen/img7.png', description: 'Description of the item', price: '$18.00' },
-      { id: 'Ramen-id8', title: 'Pork Belly Ramen', img: 'assets/Othmane/images/Menu/Ramen/img8.png', description: 'Description of the item', price: '$24.00' },
-      { id: 'Ramen-id9', title: 'Classic Miso Ramen', img: 'assets/Othmane/images/Menu/Ramen/img9.png', description: 'Description of the item', price: '$29.00' },
-      { id: 'Ramen-id10', title: 'Vegewtarian Tofu Ramen', img: 'assets/Othmane/images/Menu/Ramen/img10.png', description: 'Description of the item.', price: '$05.00' }],
+      [{ id: 'Ramen-id1', catg: 'Ramen', title: 'Classic Miso Ramen', img: 'assets/Othmane/images/Menu/Ramen/img1.png', description: 'Description of the item', price: '$33.00' },
+      { id: 'Ramen-id2', catg: 'Ramen', title: 'Vegetarian Tofu Ramen', img: 'assets/Othmane/images/Menu/Ramen/img2.png', description: 'Description of the item', price: '$23.00' },
+      { id: 'Ramen-id3', catg: 'Ramen', title: 'Pork Belly Ramen', img: 'assets/Othmane/images/Menu/Ramen/img3.png', description: 'Description of the item', price: '$43.00' },
+      { id: 'Ramen-id4', catg: 'Ramen', title: 'Teriyaki Chicken Ramen', img: 'assets/Othmane/images/Menu/Ramen/img4.png', description: 'Description of the item', price: '$45.00' },
+      { id: 'Ramen-id5', catg: 'Ramen', title: 'Spicy Sriracha Ramen', img: 'assets/Othmane/images/Menu/Ramen/img5.png', description: 'Description of the item', price: '$13.00' },
+      { id: 'Ramen-id6', catg: 'Ramen', title: 'Mushroom Ramen', img: 'assets/Othmane/images/Menu/Ramen/img6.png', description: 'Description of the item', price: '$10.00' },
+      { id: 'Ramen-id7', catg: 'Ramen', title: 'Teriyaki Chicken Ramen', img: 'assets/Othmane/images/Menu/Ramen/img7.png', description: 'Description of the item', price: '$18.00' },
+      { id: 'Ramen-id8', catg: 'Ramen', title: 'Pork Belly Ramen', img: 'assets/Othmane/images/Menu/Ramen/img8.png', description: 'Description of the item', price: '$24.00' },
+      { id: 'Ramen-id9', catg: 'Ramen', title: 'Classic Miso Ramen', img: 'assets/Othmane/images/Menu/Ramen/img9.png', description: 'Description of the item', price: '$29.00' },
+      { id: 'Ramen-id10', catg: 'Ramen', title: 'Vegewtarian Tofu Ramen', img: 'assets/Othmane/images/Menu/Ramen/img10.png', description: 'Description of the item.', price: '$05.00' }],
 
-      [{ id: 'Salad-id1', title: 'Green salad', img: 'assets/Othmane/images/Menu/Salad/img1.png', description: 'Description of the item', price: '$33.00' },
-      { id: 'Salad-id2', title: 'Fig salad', img: 'assets/Othmane/images/Menu/Salad/img2.png', description: 'Description of the item', price: '$23.00' },
-      { id: 'Salad-id3', title: 'Salmon salad', img: 'assets/Othmane/images/Menu/Salad/img3.png', description: 'Description of the item', price: '$43.00' },
-      { id: 'Salad-id4', title: 'Fattoush salad', img: 'assets/Othmane/images/Menu/Salad/img4.png', description: 'Description of the item', price: '$45.00' },
-      { id: 'Salad-id5', title: 'Vegetable salad', img: 'assets/Othmane/images/Menu/Salad/img5.png', description: 'Description of the item', price: '$13.00' },
-      { id: 'Salad-id6', title: 'Egg vegi salad', img: 'assets/Othmane/images/Menu/Salad/img6.png', description: 'Description of the item', price: '$10.00' },
-      { id: 'Salad-id7', title: 'Salad 7', img: 'assets/Othmane/images/Menu/Salad/img7.png', description: 'Description of the item', price: '$18.00' },
-      { id: 'Salad-id8', title: 'Salad 8', img: 'assets/Othmane/images/Menu/Salad/img8.png', description: 'Description of the item', price: '$24.00' },
-      { id: 'Salad-id9', title: 'Salad 9', img: 'assets/Othmane/images/Menu/Salad/img9.png', description: 'Description of the item', price: '$29.00' },
-      { id: 'Salad-id10', title: 'Salad 10', img: 'assets/Othmane/images/Menu/Salad/img10.png', description: 'Description of the item.', price: '$05.00' }],
+      [{ id: 'Salad-id1', catg: 'Salad', title: 'Green salad', img: 'assets/Othmane/images/Menu/Salad/img1.png', description: 'Description of the item', price: '$33.00' },
+      { id: 'Salad-id2', catg: 'Salad', title: 'Fig salad', img: 'assets/Othmane/images/Menu/Salad/img2.png', description: 'Description of the item', price: '$23.00' },
+      { id: 'Salad-id3', catg: 'Salad', title: 'Salmon salad', img: 'assets/Othmane/images/Menu/Salad/img3.png', description: 'Description of the item', price: '$43.00' },
+      { id: 'Salad-id4', catg: 'Salad', title: 'Fattoush salad', img: 'assets/Othmane/images/Menu/Salad/img4.png', description: 'Description of the item', price: '$45.00' },
+      { id: 'Salad-id5', catg: 'Salad', title: 'Vegetable salad', img: 'assets/Othmane/images/Menu/Salad/img5.png', description: 'Description of the item', price: '$13.00' },
+      { id: 'Salad-id6', catg: 'Salad', title: 'Egg vegi salad', img: 'assets/Othmane/images/Menu/Salad/img6.png', description: 'Description of the item', price: '$10.00' },
+      { id: 'Salad-id7', catg: 'Salad', title: 'Salad 7', img: 'assets/Othmane/images/Menu/Salad/img7.png', description: 'Description of the item', price: '$18.00' },
+      { id: 'Salad-id8', catg: 'Salad', title: 'Salad 8', img: 'assets/Othmane/images/Menu/Salad/img8.png', description: 'Description of the item', price: '$24.00' },
+      { id: 'Salad-id9', catg: 'Salad', title: 'Salad 9', img: 'assets/Othmane/images/Menu/Salad/img9.png', description: 'Description of the item', price: '$29.00' },
+      { id: 'Salad-id10', catg: 'Salad', title: 'Salad 10', img: 'assets/Othmane/images/Menu/Salad/img10.png', description: 'Description of the item.', price: '$05.00' }],
 
-      [{ id: 'Dessert-id1', title: 'Lemon Cake', img: 'assets/Othmane/images/Menu/Dessert/img1.png', description: 'Description of the item', price: '$33.00' },
-      { id: 'Dessert-id2', title: 'Strawberry Waffles', img: 'assets/Othmane/images/Menu/Dessert/img2.png', description: 'Description of the item', price: '$23.00' },
-      { id: 'Dessert-id3', title: 'Fluffy Blueberry Pancake', img: 'assets/Othmane/images/Menu/Dessert/img3.png', description: 'Description of the item', price: '$43.00' },
-      { id: 'Dessert-id4', title: 'Belgian Bliss Waffles', img: 'assets/Othmane/images/Menu/Dessert/img4.png', description: 'Description of the item', price: '$45.00' },
-      { id: 'Dessert-id5', title: 'Red Velvet Delight', img: 'assets/Othmane/images/Menu/Dessert/img5.png', description: 'Description of the item', price: '$13.00' },
-      { id: 'Dessert-id6', title: 'Chocolate Fudge Cake', img: 'assets/Othmane/images/Menu/Dessert/img6.png', description: 'Description of the item', price: '$10.00' },
-      { id: 'Dessert-id7', title: 'Dessert 7', img: 'assets/Othmane/images/Menu/Dessert/img7.png', description: 'Description of the item', price: '$18.00' },
-      { id: 'Dessert-id8', title: 'Dessert 8', img: 'assets/Othmane/images/Menu/Dessert/img8.png', description: 'Description of the item', price: '$24.00' },
-      { id: 'Dessert-id9', title: 'Dessert 9', img: 'assets/Othmane/images/Menu/Dessert/img9.png', description: 'Description of the item', price: '$29.00' },
-      { id: 'Dessert-id10', title: 'Dessert 10', img: 'assets/Othmane/images/Menu/Dessert/img10.png', description: 'Description of the item.', price: '$05.00' }]
+      [{ id: 'Dessert-id1', catg: 'Dessert', title: 'Lemon Cake', img: 'assets/Othmane/images/Menu/Dessert/img1.png', description: 'Description of the item', price: '$33.00' },
+      { id: 'Dessert-id2', catg: 'Dessert', title: 'Strawberry Waffles', img: 'assets/Othmane/images/Menu/Dessert/img2.png', description: 'Description of the item', price: '$23.00' },
+      { id: 'Dessert-id3', catg: 'Dessert', title: 'Fluffy Blueberry Pancake', img: 'assets/Othmane/images/Menu/Dessert/img3.png', description: 'Description of the item', price: '$43.00' },
+      { id: 'Dessert-id4', catg: 'Dessert', title: 'Belgian Bliss Waffles', img: 'assets/Othmane/images/Menu/Dessert/img4.png', description: 'Description of the item', price: '$45.00' },
+      { id: 'Dessert-id5', catg: 'Dessert', title: 'Red Velvet Delight', img: 'assets/Othmane/images/Menu/Dessert/img5.png', description: 'Description of the item', price: '$13.00' },
+      { id: 'Dessert-id6', catg: 'Dessert', title: 'Chocolate Fudge Cake', img: 'assets/Othmane/images/Menu/Dessert/img6.png', description: 'Description of the item', price: '$10.00' },
+      { id: 'Dessert-id7', catg: 'Dessert', title: 'Dessert 7', img: 'assets/Othmane/images/Menu/Dessert/img7.png', description: 'Description of the item', price: '$18.00' },
+      { id: 'Dessert-id8', catg: 'Dessert', title: 'Dessert 8', img: 'assets/Othmane/images/Menu/Dessert/img8.png', description: 'Description of the item', price: '$24.00' },
+      { id: 'Dessert-id9', catg: 'Dessert', title: 'Dessert 9', img: 'assets/Othmane/images/Menu/Dessert/img9.png', description: 'Description of the item', price: '$29.00' },
+      { id: 'Dessert-id10', catg: 'Dessert', title: 'Dessert 10', img: 'assets/Othmane/images/Menu/Dessert/img10.png', description: 'Description of the item.', price: '$05.00' }]
 
 
     ];
@@ -284,7 +265,7 @@
 
                         <div class="col-md-2 d-flex d-flex align-items-center fw-bold">
                             <div class="card-body">
-                              <select>
+                              <select id="options" onchange="getData(${article.catg}, ${article.id})">
                                 <optgroup label="Sauces">
                                   <option>Sauce 1</option>
                                   <option>Sauce 2</option>
@@ -296,6 +277,7 @@
                                   <option>Taille 3</option>
                                 </optgroup>
                               </select>
+                              <button class="mt-4 btn mx-0 text-light" id="remove_options" onclick="removeOptions()">Remove options</button>
 
                             </div>
                         </div>
@@ -321,6 +303,27 @@
       });
     });
 
+    // function minusProduct(x) {
+
+    //   let productEdit = document.getElementById(x);
+    //   let catg = categorieList[Math.floor((x - 1) / 10)];
+
+    //   if (Number(localStorage[`${catg}${x % 10}Quantity`]) > 0) {
+    //     localStorage[`${catg}${x % 10}Quantity`] = Number(localStorage.getItem(`${catg}${x % 10}Quantity`)) - 1;
+    //     localStorage[`${catg}${x % 10}DoublePrice`] = "$" + (Number(localStorage.getItem(`Ramen${x % 10}DoublePrice`).match(/\d+/)[0]) - Number((productEdit.querySelector(".price").innerHTML).match(/\d+/)[0])).toFixed(2);
+    //   }
+
+    //   productEdit.querySelector(".number").innerHTML = localStorage[`${catg}${x % 10}Quantity`];
+    //   productEdit.querySelector(".double-price").innerHTML = localStorage.getItem(`${catg}${x % 10}DoublePrice`);
+    //   if (Number(localStorage[`${catg}${x % 10}Quantity`]) === 0) {
+    //     localStorage.removeItem(`${catg}-id${x % 10}`);
+    //     localStorage[`${catg}${x % 10}Quantity`] = 1;
+    //     localStorage[`${catg}${x % 10}DoublePrice`] = productEdit.querySelector(".price").innerHTML;
+    //     window.location.reload();
+    //   }
+    //   document.querySelector(".totalePanier").innerHTML = "$" + calcTotale().toFixed(2);
+
+    // }
     function minusProduct(x) {
 
       let productEdit = document.getElementById(x);
@@ -328,7 +331,7 @@
 
       if (Number(localStorage[`${catg}${x % 10}Quantity`]) > 0) {
         localStorage[`${catg}${x % 10}Quantity`] = Number(localStorage.getItem(`${catg}${x % 10}Quantity`)) - 1;
-        localStorage[`${catg}${x % 10}DoublePrice`] = "$" + (Number(localStorage.getItem(`Ramen${x % 10}DoublePrice`).match(/\d+/)[0]) - Number((productEdit.querySelector(".price").innerHTML).match(/\d+/)[0])).toFixed(2);
+        localStorage[`${catg}${x % 10}DoublePrice`] = "$" + (Number((productEdit.querySelector(".price").innerHTML).match(/\d+/)[0]) * Number(localStorage.getItem(`${catg}${x % 10}Quantity`))).toFixed(2);
       }
 
       productEdit.querySelector(".number").innerHTML = localStorage[`${catg}${x % 10}Quantity`];
@@ -339,6 +342,7 @@
         localStorage[`${catg}${x % 10}DoublePrice`] = productEdit.querySelector(".price").innerHTML;
         window.location.reload();
       }
+      document.querySelector(".totalePanier").innerHTML = "$" + calcTotale().toFixed(2);
 
     }
 
@@ -347,10 +351,12 @@
       let productEdit = document.getElementById(x);
       let catg = categorieList[Math.floor((x - 1) / 10)];
       localStorage[`${catg}${x % 10}Quantity`] = Number(localStorage.getItem(`${catg}${x % 10}Quantity`)) + 1;
-      localStorage[`${catg}${x % 10}DoublePrice`] = "$" + (Number(localStorage.getItem(`Ramen${x % 10}DoublePrice`).match(/\d+/)[0]) + Number((productEdit.querySelector(".price").innerHTML).match(/\d+/)[0])).toFixed(2);
+      localStorage[`${catg}${x % 10}DoublePrice`] = "$" + (Number(localStorage.getItem(`${catg}${x % 10}DoublePrice`).match(/\d+/)[0]) + Number((productEdit.querySelector(".price").innerHTML).match(/\d+/)[0])).toFixed(2);
 
       productEdit.querySelector(".number").innerHTML = Number(productEdit.querySelector(".number").innerHTML) + 1;
       productEdit.querySelector(".double-price").innerHTML = localStorage.getItem(`${catg}${x % 10}DoublePrice`);
+      document.querySelector(".totalePanier").innerHTML = "$" + calcTotale().toFixed(2);
+
     }
 
 
@@ -376,12 +382,12 @@
 
     /* Debut: Afficher le nombre des articles dans le panier */
 
-    if (lengthOfPanierList === 0) {
-      document.getElementById("number-of-products").innerHTML = `Votre Panier est vide`;
+    // if (lengthOfPanierList === 0) {
+    //   document.getElementById("number-of-products").innerHTML = `Votre Panier est vide`;
 
-    } else {
-      document.getElementById("number-of-products").innerHTML = `Votre Panier ( ${lengthOfPanierList} articles)`;
-    }
+    // } else {
+    //   document.getElementById("number-of-products").innerHTML = `Votre Panier ( ${lengthOfPanierList} articles)`;
+    // }
 
     /* Fin: Afficher le nombre des articles dans le panier */
 
@@ -453,11 +459,14 @@
     line.className = "container first-line";
     divBtn.className = "container"
 
+    // totalOfPanier.innerHTML = `
+    //         <div class="col-3 fw-bold" id="local">Total</div>
+    //         <div class="col-2 ms-5 fw-bold totalePanier">$${calcTotale().toFixed(2)}</div>
+    //    `;
     totalOfPanier.innerHTML = `
             <div class="col-3 fw-bold" id="local">Total</div>
-            <div class="col-2 ms-5 fw-bold">$${calcTotale().toFixed(2)}</div>
+            <div class="col-2 ms-5 fw-bold totalePanier">$${calcTotale().toFixed(2)}</div>
        `;
-
     divBtn.innerHTML = `
             <button class="btn text-light rounded-3 px-4"><a href="devis.html" style="color: white">Devis</a></button>
             <button class="btn text-light rounded-3 px-4" onclick="viderLePanier()">Order</button>
@@ -492,37 +501,37 @@
 
     // console.log(window.screen.width);
 
+    option_values = document.querySelector(".options_added");
+    options = document.getElementById("options");
+    option_values.innerHTML = localStorage['options_add'];
 
-    if (window.screen.width < 768) {
-      productList.forEach(function (pro, i) {
-        if (searchLocalStorage(pro.id)) {
-          // console.log(document.getElementById(i + 1).querySelector('h5'));
-          document.getElementById(i + 1).querySelector('h5').style.textAlign = '';
-          console.log(document.getElementById(i + 1).querySelector('h5'));
+    console.log(options);
 
-        }
-      })
+    function getData(categorie, proId) {
+      let productEdit = document.getElementById(proId);
+      if (localStorage['options_add'].length !== 0) {
+        localStorage['options_add'] += ", " + options.value;
+        option_values.innerHTML = localStorage['options_add'];
+        // localStorage[`${categorie}${(proId - 1) % 10}DoublePrice`] = "$" + Number(localStorage.getItem(`${catg}${(proId - 1) % 10}DoublePrice`).match(/\d+/)[0]) + 1;
+        console.log(categorie);
+        // console.log(localStorage[`${categorie}${(proId - 1) % 10}DoublePrice`]);
+      }
+      if (localStorage['options_add'].length === 0) {
+        localStorage['options_add'] += options.value;
+        option_values.innerHTML = localStorage['options_add'];
+      }
+
+    }
+
+    function removeOptions() {
+      localStorage['options_add'] = "";
+      option_values.innerHTML = localStorage['options_add'];
+
     }
 
 
 
-    window.onresize = function () {
-      productList.forEach(function (pro, indice) {
-        if (searchLocalStorage(pro.id)) {
-          document.getElementById(indice + 1).querySelector('h5').style.textAlign = window.screen.width < 768 ? 'center' : '';
-          // document.getElementById(indice + 1).querySelector('img-center').style.cssText = window.screen.width < 768 ? `display: none; justify-content: center;` : '';
-
-          for (let i = 0; i < document.getElementById(indice + 1).getElementsByClassName('card-text').length; i++) {
-            document.getElementById(indice + 1).getElementsByClassName('card-text')[i].style.textAlign = window.screen.width < 768 ? 'center' : '';
-
-          }
-
-
-
-
-        }
-      })
-    }
+    // console.log(option_values);
 
 
     // localStorage.clear();

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage</title>
+</head>
+
+<body>
+    <script>
+        let productList = [
+            [{ id: 'Ramen-id1', catg: 'Ramen', title: 'Classic Miso Ramen', img: 'assets/Othmane/images/Menu/Ramen/img1.png', description: 'Description of the item', price: '$33.00' },
+            { id: 'Ramen-id2', catg: 'Ramen', title: 'Vegetarian Tofu Ramen', img: 'assets/Othmane/images/Menu/Ramen/img2.png', description: 'Description of the item', price: '$23.00' },
+            { id: 'Ramen-id3', catg: 'Ramen', title: 'Pork Belly Ramen', img: 'assets/Othmane/images/Menu/Ramen/img3.png', description: 'Description of the item', price: '$43.00' },
+            { id: 'Ramen-id4', catg: 'Ramen', title: 'Teriyaki Chicken Ramen', img: 'assets/Othmane/images/Menu/Ramen/img4.png', description: 'Description of the item', price: '$45.00' },
+            { id: 'Ramen-id5', catg: 'Ramen', title: 'Spicy Sriracha Ramen', img: 'assets/Othmane/images/Menu/Ramen/img5.png', description: 'Description of the item', price: '$13.00' },
+            { id: 'Ramen-id6', catg: 'Ramen', title: 'Mushroom Ramen', img: 'assets/Othmane/images/Menu/Ramen/img6.png', description: 'Description of the item', price: '$10.00' },
+            { id: 'Ramen-id7', catg: 'Ramen', title: 'Teriyaki Chicken Ramen', img: 'assets/Othmane/images/Menu/Ramen/img7.png', description: 'Description of the item', price: '$18.00' },
+            { id: 'Ramen-id8', catg: 'Ramen', title: 'Pork Belly Ramen', img: 'assets/Othmane/images/Menu/Ramen/img8.png', description: 'Description of the item', price: '$24.00' },
+            { id: 'Ramen-id9', catg: 'Ramen', title: 'Classic Miso Ramen', img: 'assets/Othmane/images/Menu/Ramen/img9.png', description: 'Description of the item', price: '$29.00' },
+            { id: 'Ramen-id10', catg: 'Ramen', title: 'Vegewtarian Tofu Ramen', img: 'assets/Othmane/images/Menu/Ramen/img10.png', description: 'Description of the item.', price: '$05.00' }],
+
+            [{ id: 'Salad-id1', catg: 'Salad', title: 'Green salad', img: 'assets/Othmane/images/Menu/Salad/img1.png', description: 'Description of the item', price: '$33.00' },
+            { id: 'Salad-id2', catg: 'Salad', title: 'Fig salad', img: 'assets/Othmane/images/Menu/Salad/img2.png', description: 'Description of the item', price: '$23.00' },
+            { id: 'Salad-id3', catg: 'Salad', title: 'Salmon salad', img: 'assets/Othmane/images/Menu/Salad/img3.png', description: 'Description of the item', price: '$43.00' },
+            { id: 'Salad-id4', catg: 'Salad', title: 'Fattoush salad', img: 'assets/Othmane/images/Menu/Salad/img4.png', description: 'Description of the item', price: '$45.00' },
+            { id: 'Salad-id5', catg: 'Salad', title: 'Vegetable salad', img: 'assets/Othmane/images/Menu/Salad/img5.png', description: 'Description of the item', price: '$13.00' },
+            { id: 'Salad-id6', catg: 'Salad', title: 'Egg vegi salad', img: 'assets/Othmane/images/Menu/Salad/img6.png', description: 'Description of the item', price: '$10.00' },
+            { id: 'Salad-id7', catg: 'Salad', title: 'Salad 7', img: 'assets/Othmane/images/Menu/Salad/img7.png', description: 'Description of the item', price: '$18.00' },
+            { id: 'Salad-id8', catg: 'Salad', title: 'Salad 8', img: 'assets/Othmane/images/Menu/Salad/img8.png', description: 'Description of the item', price: '$24.00' },
+            { id: 'Salad-id9', catg: 'Salad', title: 'Salad 9', img: 'assets/Othmane/images/Menu/Salad/img9.png', description: 'Description of the item', price: '$29.00' },
+            { id: 'Salad-id10', catg: 'Salad', title: 'Salad 10', img: 'assets/Othmane/images/Menu/Salad/img10.png', description: 'Description of the item.', price: '$05.00' }],
+
+            [{ id: 'Dessert-id1', catg: 'Dessert', title: 'Lemon Cake', img: 'assets/Othmane/images/Menu/Dessert/img1.png', description: 'Description of the item', price: '$33.00' },
+            { id: 'Dessert-id2', catg: 'Dessert', title: 'Strawberry Waffles', img: 'assets/Othmane/images/Menu/Dessert/img2.png', description: 'Description of the item', price: '$23.00' },
+            { id: 'Dessert-id3', catg: 'Dessert', title: 'Fluffy Blueberry Pancake', img: 'assets/Othmane/images/Menu/Dessert/img3.png', description: 'Description of the item', price: '$43.00' },
+            { id: 'Dessert-id4', catg: 'Dessert', title: 'Belgian Bliss Waffles', img: 'assets/Othmane/images/Menu/Dessert/img4.png', description: 'Description of the item', price: '$45.00' },
+            { id: 'Dessert-id5', catg: 'Dessert', title: 'Red Velvet Delight', img: 'assets/Othmane/images/Menu/Dessert/img5.png', description: 'Description of the item', price: '$13.00' },
+            { id: 'Dessert-id6', catg: 'Dessert', title: 'Chocolate Fudge Cake', img: 'assets/Othmane/images/Menu/Dessert/img6.png', description: 'Description of the item', price: '$10.00' },
+            { id: 'Dessert-id7', catg: 'Dessert', title: 'Dessert 7', img: 'assets/Othmane/images/Menu/Dessert/img7.png', description: 'Description of the item', price: '$18.00' },
+            { id: 'Dessert-id8', catg: 'Dessert', title: 'Dessert 8', img: 'assets/Othmane/images/Menu/Dessert/img8.png', description: 'Description of the item', price: '$24.00' },
+            { id: 'Dessert-id9', catg: 'Dessert', title: 'Dessert 9', img: 'assets/Othmane/images/Menu/Dessert/img9.png', description: 'Description of the item', price: '$29.00' },
+            { id: 'Dessert-id10', catg: 'Dessert', title: 'Dessert 10', img: 'assets/Othmane/images/Menu/Dessert/img10.png', description: 'Description of the item.', price: '$05.00' }]
+
+
+        ];
+        productList[0].forEach(function (pro, i) {
+            localStorage.setItem(`Ramen${i + 1}DoublePrice`, pro.price);
+            localStorage.setItem(`Ramen${i + 1}Quantity`, 1);
+
+        });
+
+        productList[1].forEach(function (pro, i) {
+            localStorage.setItem(`Salad${i + 1}DoublePrice`, pro.price);
+            localStorage.setItem(`Salad${i + 1}Quantity`, 1);
+
+        });
+
+        productList[2].forEach(function (pro, i) {
+            localStorage.setItem(`Dessert${i + 1}DoublePrice`, pro.price);
+            localStorage.setItem(`Dessert${i + 1}Quantity`, 1);
+
+        });
+        localStorage.setItem("options_add", "");
+    </script>
+</body>
+
+</html>
