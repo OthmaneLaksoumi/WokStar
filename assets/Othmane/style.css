@@ -448,3 +448,12 @@ footer .left {
     cursor: pointer;
     background-color: #eee;
 }
+
+.valide{
+    box-shadow: #39DB4A 0 10px 30px !important;
+}
+
+.invalid {
+    box-shadow: red 0 10px 30px !important;
+    /* background-color: red; */
+}
