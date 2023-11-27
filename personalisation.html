@@ -220,7 +220,7 @@
 
     function afficheProduct(i, j) {
       let article = document.createElement("div");
-      article.id = j + (i) * 10 + 1;
+      article.id = j + i * 10 + 1;
       article.innerHTML = `
             <div class="card mb-3 container shadow">
                             <div class="row g-0">
@@ -499,13 +499,12 @@
       window.location.reload();
     }
 
-    // console.log(window.screen.width);
 
     option_values = document.querySelector(".options_added");
     options = document.getElementById("options");
     option_values.innerHTML = localStorage['options_add'];
-
-    console.log(options);
+    
+    // console.log(options);
 
     function getData(categorie, proId) {
       let productEdit = document.getElementById(proId);
