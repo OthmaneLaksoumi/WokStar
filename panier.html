@@ -226,7 +226,7 @@
 
         function afficheProduct(i, j) {
             let article = document.createElement("div");
-            article.id = j + (i) * 10 + 1;
+            article.id = j + i * 10 + 1;
             article.innerHTML = `
             <div class="card mb-3 container shadow">
                             <div class="row g-0">
@@ -265,7 +265,7 @@
                         <div class="col-md-2 d-flex d-flex align-items-center fw-bold">
                             <div class="card-body">
                                 <p class="card-text double-price">${localStorage.getItem(`${categorieList[i]}${j + 1}DoublePrice`)}</p>
-                            </div>
+                            </div>  
                         </div>
 
 
@@ -305,7 +305,6 @@
                 window.location.reload();
             }
             document.querySelector(".totalePanier").innerHTML = "$" + calcTotale().toFixed(2);
-            console.log(document.querySelector(".totalePanier"));
 
         }
 
@@ -313,6 +312,7 @@
 
             let productEdit = document.getElementById(x);
             let catg = categorieList[Math.floor((x - 1) / 10)];
+
             localStorage[`${catg}${x % 10}Quantity`] = Number(localStorage.getItem(`${catg}${x % 10}Quantity`)) + 1;
             localStorage[`${catg}${x % 10}DoublePrice`] = "$" + (Number((productEdit.querySelector(".price").innerHTML).match(/\d+/)[0]) * Number(localStorage.getItem(`${catg}${x % 10}Quantity`))).toFixed(2);
             productEdit.querySelector(".number").innerHTML = Number(productEdit.querySelector(".number").innerHTML) + 1;
@@ -402,6 +402,9 @@
 
         /* Fin: Fonction qui return le le total des prix dans le panier page */
 
+        let str = "abc450";
+        console.log(str.match(/\d+/));
+
 
 
 
@@ -449,43 +452,7 @@
 
             window.location.reload();
         }
-
-        // console.log(window.screen.width);
-
-
-        if (window.screen.width < 768) {
-            productList.forEach(function (pro, i) {
-                if (searchLocalStorage(pro.id)) {
-                    // console.log(document.getElementById(i + 1).querySelector('h5'));
-                    document.getElementById(i + 1).querySelector('h5').style.textAlign = '';
-                    console.log(document.getElementById(i + 1).querySelector('h5'));
-
-                }
-            })
-        }
-
-
-
-        window.onresize = function () {
-            productList.forEach(function (pro, indice) {
-                if (searchLocalStorage(pro.id)) {
-                    document.getElementById(indice + 1).querySelector('h5').style.textAlign = window.screen.width < 768 ? 'center' : '';
-                    // document.getElementById(indice + 1).querySelector('img-center').style.cssText = window.screen.width < 768 ? `display: none; justify-content: center;` : '';
-
-                    for (let i = 0; i < document.getElementById(indice + 1).getElementsByClassName('card-text').length; i++) {
-                        document.getElementById(indice + 1).getElementsByClassName('card-text')[i].style.textAlign = window.screen.width < 768 ? 'center' : '';
-
-                    }
-
-
-
-
-                }
-            })
-        }
-
-
-        // localStorage.clear();
+                
 
         document.body.appendChild(document.querySelector("footer"));
 

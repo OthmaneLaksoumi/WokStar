@@ -198,7 +198,8 @@
         `;
 
         productList.forEach(function (list) {
-            list.forEach(function (ele, i) {
+            // console.log(list);
+            list.forEach(function (ele) {
 
                 let element = document.createElement("div");
                 element.className = "menu-item";
@@ -224,7 +225,8 @@
 
 
         filter.addEventListener('change', function () {
-            // divContainer.innerHTML = '';
+         
+            divContainer.innerHTML = '';
             if (this.value === 'All') {
                 productList.forEach(function (list) {
                     list.forEach(function (ele, i) {
@@ -253,7 +255,7 @@
             } else {
             divContainer.innerHTML = '';
 
-                productList[Number(this.value) - 1].forEach(function (ele, i) {
+                productList[Number(this.value) - 1].forEach(function (ele) {
                     let element = document.createElement("div");
                     element.className = "menu-item";
                     element.innerHTML = `
@@ -287,11 +289,10 @@
 
         
         document.body.appendChild(pagination);
-        console.log(pagination);
-        function AddPanier(ele) {
-            localStorage.setItem(ele, ele);
+        // console.log(pagination);
+        function AddPanier(id) {
+            localStorage.setItem(id, id);
         }
-
 
 
 

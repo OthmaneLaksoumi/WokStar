@@ -183,7 +183,10 @@
             <p><strong>Message :</strong> ${message}</p>            
             `;
 
+           
+
             document.body.appendChild(msgElement);
+           
             setTimeout(function () {
                 msgElement.style.width = '50%';
                 msgElement.style.height = '50vh';
@@ -191,13 +194,14 @@
             setTimeout(function () {
                 msgElement.style.display = 'none';
             }, 4000);
+            
         }
 
         let envoyer = document.getElementById("envoyer");
 
         envoyer.addEventListener('submit', function (event) {
             event.preventDefault();
-            displayMessage("Envoyer");
+            displayMessage("envoyer");
         }); 
 
         let inputs = document.querySelectorAll("input");
